@@ -4,6 +4,16 @@ def get_stats(stats):
     for stat, value in stats.items():
         print(f"{stat}: {value}")
 
+def level_up(stats, stat):
+    """Increase a S.P.E.C.I.A.L. stat by 1."""
+    if stat in stats:
+        if stats[stat] < 10:
+            stats[stat] += 1
+            return f"{stat} increased to {stats[stat]}!"
+        return f"{stat} is already at maximum (10)!"
+    return f"Unknown stat: {stat}"
+
+
 if __name__ == "__main__":
     player = {
         'Strength': 5,
